@@ -18,6 +18,7 @@ export class AddCoursesComponent implements OnInit {
   });
   courseId;
   course;
+  isSubmitted =false;
 
   constructor(private courseListService: CourseListService,
     private router: Router,
@@ -26,8 +27,13 @@ export class AddCoursesComponent implements OnInit {
   ngOnInit() {
 
   };
+  get formControls() { return this.courseForm.controls; }
 
   saveCourse() {
+    this.isSubmitted = true;
+    if(this.courseForm.invalid){
+      return;
+    }
     console.log('inside course list component',this.courseForm);
     const course = {
       'title': this.courseForm.value.title,

@@ -18,6 +18,7 @@ export class EditCoursesComponent implements OnInit {
   });
   courseId;
   course;
+  isSubmitted = false;
 
   constructor(private courseListService: CourseListService,
     private router: Router,
@@ -31,6 +32,7 @@ export class EditCoursesComponent implements OnInit {
       }
     }) 
   };
+  get formControls() { return this.editCourseForm.controls; }
 
   getCourseById(){
       this.courseListService.getCourseById(this.courseId).subscribe(res => {
@@ -40,6 +42,10 @@ export class EditCoursesComponent implements OnInit {
    
   }
   updateCourse(){
+    this.isSubmitted = true;
+    if(this.editCourseForm.invalid){
+      return;
+    }
     const course = {
       'id':this.courseId,
       'title': this.editCourseForm.value.title,

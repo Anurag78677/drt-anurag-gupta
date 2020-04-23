@@ -16,6 +16,7 @@ export class CourseListComponent implements OnInit {
     { title: 'Description', name: 'description' },
   ];
   courseList;
+  searchText
   constructor(private courseListService: CourseListService) { }
 
   ngOnInit(): void {
