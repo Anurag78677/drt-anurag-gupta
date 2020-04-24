@@ -16,12 +16,17 @@ export class CourseListComponent implements OnInit {
     { title: 'Description', name: 'description' },
   ];
   courseList;
+  searchTitle = '';
   constructor(private courseListService: CourseListService) { }
 
   ngOnInit(): void {
     this.getCourseList();
   }
 
+  searchByTitle(event) {
+    this.searchTitle = event.target.value;
+    console.log( this.searchTitle, 'event')
+  }
   getCourseList() {
     console.log('inside course list component');
     this.courseListService.getCourseList().subscribe(res => {

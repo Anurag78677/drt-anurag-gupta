@@ -11,19 +11,25 @@ export class TableListingComponent implements OnInit {
   @Input() options;
   allCourses;
   allColumn;
+  
  
   constructor(private courseListService: CourseListService,
     private router: Router) { }
 
-  ngOnInit(): void {
-  }
-  @Input() set data(value: Array<{}>) {
-    this.allCourses = value;
-  }
+    @Input() set data(value: Array<{}>) {
+      this.allCourses = value;
+    }
+  
+    @Input() set columns(value: Array<{}>) {
+      this.allColumn = value;
+    }
+    @Input() searchTitle: any;
+    ngOnInit(): void {
+    console.log(this.searchTitle, 'searchTitle');
 
-  @Input() set columns(value: Array<{}>) {
-    this.allColumn = value;
   }
+ 
+  
 
   deleteCourse(id: any) {
     this.courseListService.deleteCourse(id).subscribe(res => {

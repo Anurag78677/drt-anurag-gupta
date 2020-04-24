@@ -18,6 +18,7 @@ import { TableListingComponent } from './table-listing/table-listing.component';
 import { AddCoursesComponent } from './add-courses/add-courses.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditCoursesComponent } from './edit-courses/edit-courses.component';
+import { FilterPipe } from './filter.pipe';
 
 
 
@@ -31,6 +32,7 @@ import { EditCoursesComponent } from './edit-courses/edit-courses.component';
     TableListingComponent,
     AddCoursesComponent,
     EditCoursesComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
