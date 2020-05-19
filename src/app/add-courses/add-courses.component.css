@@ -1,0 +1,9 @@
+form {
+    width: 53%;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    padding: 25px 40px;
+}
+ .red-color {
+    color: red;
+ }

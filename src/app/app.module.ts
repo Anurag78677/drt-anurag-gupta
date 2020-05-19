@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+// import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,13 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AboutComponent } from './about/about.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CourseListComponent } from './course-list/course-list.component';
+import { TableListingComponent } from './table-listing/table-listing.component';
+import { AddCoursesComponent } from './add-courses/add-courses.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditCoursesComponent } from './edit-courses/edit-courses.component';
+import { FilterPipe } from './filter.pipe';
+
 
 
 @NgModule({
@@ -20,12 +28,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavbarComponent,
     WelcomeComponent,
     AboutComponent,
+    CourseListComponent,
+    TableListingComponent,
+    AddCoursesComponent,
+    EditCoursesComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AlertModule
+    AlertModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,10 @@
+<div class="add-btn-sec">
+    <div>
+        <input class="margin-right" placeholder="Search by title" (keyup)="searchByTitle($event)">
+        <button>
+            <a class="btn" [routerLink]="['/addCourses']" routerLinkActive="router-link-active">Add New Course</a>
+        </button>
+    </div>
+</div>
+
+<app-table-listing [columns]="columns" [searchTitle]="searchTitle" [data]="courseList"></app-table-listing>

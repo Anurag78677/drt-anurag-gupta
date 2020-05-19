@@ -1,0 +1,13 @@
+.add-btn-sec {
+    width: 57%;
+    margin: 0 auto;
+    text-align: right;
+    padding-bottom: 20px;
+}
+.btn {
+    display: block;
+    padding: 0.0rem 1rem;
+}
+.margin-right {
+    margin-right: 5px;
+}

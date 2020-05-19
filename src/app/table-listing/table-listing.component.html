@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="table-container">
+            <table class="table table-striped table-hover table-responsive-md">
+                <thead>
+                    <tr>
+                        <th scope="col" *ngFor="let col of allColumn">{{col.title}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of allCourses | filter:{ title: searchTitle } : false">
+                        <ng-container *ngFor="let col of allColumn">
+                            <td>
+                                {{ (row[col.name])}}
+                            </td>
+                        </ng-container>
+                        <td>
+                            <a class="act-btn">
+                                <i class="fa fa-pencil-square" (click)="editCourse(row.id)"></i>
+                            </a>
+                            <a class="act-btn" (click)="deleteCourse(row.id)">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
