@@ -36,8 +36,13 @@ export class EditCoursesComponent implements OnInit {
 
   getCourseById(){
       this.courseListService.getCourseById(this.courseId).subscribe(res => {
-          this.course = res;
-          console.log( this.course);
+        this.course = res;
+          this.editCourseForm = new FormGroup({
+            title: new FormControl( this.course.title, [Validators.required]),
+            duration: new FormControl( this.course.duration, [Validators.required]),
+            durationUnit: new FormControl( this.course.durationUnit, [Validators.required]),
+            description: new FormControl( this.course.description, [Validators.required]),
+          });
     })
    
   }

@@ -1,40 +1,43 @@
 <div class="container">
-    <div class="row">
-        <form  [(formGroup)]="editCourseForm" *ngIf="course">
-            <h2 class="text-center">Update Course</h2>
-            <div class="form-group">
-              <label for="Title">Title:</label>
-              <input type="text" formControlName="title" name="title" [(ngModel)]="course.title" placeholder="Enter Title" class="form-control">
-              <div *ngIf="isSubmitted && formControls.title.errors">
-                <div *ngIf="formControls.title.errors.required" class="red-color">Title is required</div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="Duration">Duration:</label>
-              <input type="number" formControlName="duration" name="duration" [(ngModel)]="course.duration"  placeholder="Enter Duration" class="form-control">
-              <div *ngIf="isSubmitted && formControls.duration.errors">
-                <div *ngIf="formControls.duration.errors.required" class="red-color">Duration is required</div>
-              </div>
-            </div>
-            <div class="form-group">
-                <label for="Duration">Duration Unit:</label>
-                <input class="form-control" placeholder="Enter Duration Unit" type="text" formControlName="durationUnit" [(ngModel)]="course.durationUnit" name="durationUnit">
-                <div *ngIf="isSubmitted && formControls.durationUnit.errors">
-                  <div *ngIf="formControls.durationUnit.errors.required" class="red-color">Duration Unit is required</div>
-                </div>
-              </div>
-              <div class="form-group">
-                  <label for="Description">
-                    Description
-                  </label>
-                  <textarea placeholder="Enter Description" formControlName="description" [(ngModel)]="course.description" name="description" class="form-control"></textarea>
-                  <div *ngIf="isSubmitted && formControls.description.errors">
-                    <div *ngIf="formControls.description.errors.required" class="red-color">Description is required</div>
-                  </div>
-              </div>
-           <div class="form-group text-center">
-            <button type="button" class="btn btn-primary" (click)="updateCourse()">Update</button>
-           </div>
-        </form>
-    </div>
+  <div class="row">
+    <form [(formGroup)]="editCourseForm" *ngIf="course">
+      <h2 class="text-center">Update Course</h2>
+      <div class="form-group">
+        <label for="Title">Title:</label>
+        <input type="text" formControlName="title" name="title" placeholder="Enter Title" class="form-control">
+        <div *ngIf="isSubmitted && formControls.title.errors">
+          <div *ngIf="formControls.title.errors.required" class="red-color">Title is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="Duration">Duration:</label>
+        <input type="number" formControlName="duration" name="duration" placeholder="Enter Duration"
+          class="form-control">
+        <div *ngIf="isSubmitted && formControls.duration.errors">
+          <div *ngIf="formControls.duration.errors.required" class="red-color">Duration is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="Duration">Duration Unit:</label>
+        <input class="form-control" placeholder="Enter Duration Unit" type="text" formControlName="durationUnit"
+          name="durationUnit">
+        <div *ngIf="isSubmitted && formControls.durationUnit.errors">
+          <div *ngIf="formControls.durationUnit.errors.required" class="red-color">Duration Unit is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="Description">
+          Description
+        </label>
+        <textarea placeholder="Enter Description" formControlName="description" name="description"
+          class="form-control"></textarea>
+        <div *ngIf="isSubmitted && formControls.description.errors">
+          <div *ngIf="formControls.description.errors.required" class="red-color">Description is required</div>
+        </div>
+      </div>
+      <div class="form-group text-center">
+        <button type="button" class="btn btn-primary" (click)="updateCourse()">Update</button>
+      </div>
+    </form>
   </div>
+</div>
